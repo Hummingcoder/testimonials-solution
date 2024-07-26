@@ -1,0 +1,128 @@
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: #19212e;
+  --white: hsl(0, 0%, 100%);
+
+  /* Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+html,
+body,
+main {
+  width: 100%;
+}
+main {
+  background: var(--light-grayish-blue);
+  min-height: 100vh;
+}
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1440px;
+  height: fit-content;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+.review_card {
+  width: 100%;
+  background: var(--moderate-violet);
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+.name,
+.heading {
+  color: var(--white);
+  font-weight: 600;
+}
+article img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 2px solid #ffffff80;
+}
+.name {
+  font-size: 1rem;
+  margin-bottom: -4px;
+}
+.heading {
+  font-size: clamp(1.2rem, 6vw, 1.3rem);
+  line-height: 1.4;
+}
+.third .heading,
+.third .name,
+.fifth .heading,
+.fifth .name {
+  color: var(--very-dark-blackish-blue);
+}
+.varify {
+  color: #ffffff80;
+  font-size: 0.8rem;
+}
+.third .varify,
+.fifth .varify {
+  color: hsla(217, 30%, 14%, 0.5);
+}
+.desc {
+  color: rgba(255, 255, 255, 0.71);
+  font-size: clamp(0.8rem, 4vw, 1rem);
+  font-weight: 400;
+}
+.third .desc,
+.fifth .desc {
+  color: hsla(217, 30%, 14%, 0.7);
+}
+.first {
+  background: var(--moderate-violet);
+}
+.second {
+  background: var(--very-dark-grayish-blue);
+}
+
+.third,
+.fifth {
+  background: var(--white);
+}
+.fourth {
+  background: var(--very-dark-blackish-blue);
+}
+
+@media (width > 900px) {
+  .container {
+    height: 100%;
+    padding: 2.1rem 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "first first second fifth"
+      "third fourth fourth fifth";
+  }
+
+  .first {
+    grid-area: first;
+  }
+  .second {
+    grid-area: second;
+  }
+  .third {
+    grid-area: third;
+  }
+  .fourth {
+    grid-area: fourth;
+  }
+  .fifth {
+    grid-area: fifth;
+  }
+}
